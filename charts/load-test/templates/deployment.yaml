@@ -21,7 +21,8 @@ spec:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         command: ["/bin/sh"]
-        args: ["-c", "while true; do locust --host http://front-end:80 -f /config/locustfile.py --clients 5 --hatch-rate 5 --num-request 100 --no-web; done"]        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        args: ["-c", "while true; do locust --host http://front-end:80 -f /config/locustfile.py --clients 5 --hatch-rate 5 --num-request 100 --no-web; done"]
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: {{ .Values.service.internalPort }}
         resources:
