@@ -7,7 +7,7 @@ ADD locustfile.py /config/locustfile.py
 ADD runLocust.sh /usr/local/bin/runLocust.sh
 
 ENV LOCUST_FILE /config/locustfile.py
-ENV HOST http://front-end:80
+ENV HOST front-end:80
 
 EXPOSE 8089
 
